@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ</title>
+    <style>
+        table {
+            width: 50%;
+            margin: 50px auto;
+            border-collapse: collapse;
+            
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #000;
+        }
+        .option {
+            cursor: pointer;
+        }
+        .correct {
+            background-color: green;
+            color: white;
+        }
+        .wrong {
+            background-color: red;
+            color: white;
+        }
+        table{
+            background-color: rgb(243, 188, 206);
+        
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr><th colspan="2">In Web Design, CSS Stands For</th></tr>
+        <tr onclick="checkAnswer(this, false)" class="option"><td>A</td><td>Centralized Security System</td></tr>
+        <tr onclick="checkAnswer(this, false)" class="option"><td>B</td><td>Customer Service Specialist</td></tr>
+        <tr onclick="checkAnswer(this, true)" class="option"><td>C</td><td>Cascading Style Sheets</td></tr>
+        <tr onclick="checkAnswer(this, false)" class="option"><td>D</td><td>Computer Science Society</td></tr>
+    </table>
+
+    <script>
+        function checkAnswer(row, isCorrect) {
+            if (isCorrect) {
+                row.classList.add('correct');
+            } else {
+                row.classList.add('wrong');
+            }
+            // Disable further clicks
+            document.querySelectorAll('.option').forEach(option => {
+                option.onclick = null;
+            });
+        }
+    </script>
+</body>
+</html>
